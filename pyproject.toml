@@ -1,0 +1,31 @@
+[project]
+name = "tax-comparison"
+version = "0.1.0"
+description = "Compare tax obligations between sole trader and company business structures in Australia"
+readme = "README.md"
+authors = [
+    { name = "mharv", email = "mitch.k.harvey@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.3.1",
+    "rich>=14.2.0",
+]
+
+[project.scripts]
+tax-compare = "tax_comparison.cli:main"
+
+[project.optional-dependencies]
+charts = [
+    "matplotlib>=3.10.8",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+]
